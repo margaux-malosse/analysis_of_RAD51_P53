@@ -77,6 +77,22 @@
 
 > ℹ️ Les fichiers ci-dessus sont générés par `src/stats.py` à partir de `data/merged_TP53_RAD51_WGD_norm.csv`.
 
+## 🖼️ Figures (aperçu)
+
+**Scatter RAD51 ↔ TP53 (WGD− / WGD+)**
+<br>
+<img src="figures/rad51_vs_tp53_WGD_minus.png" width="48%"> <img src="figures/rad51_vs_tp53_WGD_plus.png" width="48%">
+
+**Boxplots par groupe WGD**
+<br>
+<img src="figures/rad51_by_WGD_box.png" width="48%"> <img src="figures/tp53_by_WGD_box.png" width="48%">
+
+**Figures initiales**
+<br>
+<img src="figures/Figure%20WGD-.png" width="48%"> <img src="figures/Figure%20WGD%2B.png" width="48%">
+
+> ℹ️ Les fichiers ci-dessus sont générés par 'figuresstats.py' à partir de `data/merged_TP53_RAD51_WGD_norm.csv`.
+
 analysis_of_RAD51_P53/
 ├─ data/
 │  ├─ merged_TP53_RAD51_WGD_norm.csv
