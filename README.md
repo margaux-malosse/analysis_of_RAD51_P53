@@ -3,7 +3,6 @@
 # Analysis of RAD51 & TP53 (WGD)
 
 [![Python](https://img.shields.io/badge/Python-3.x-blue)](#)
-[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange)](#)
 [![Status](https://img.shields.io/badge/Status-Active-brightgreen)](#)
 [![WGD](https://img.shields.io/badge/WGD-Plus%20%7C%20Minus-purple)](#)
 
