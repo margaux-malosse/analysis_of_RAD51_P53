@@ -16,7 +16,6 @@
 
 - 📄 **Rapports**
   - PDF : [`docs/Analysis_of_RAD51_and_TP53.pdf`](docs/Analysis_of_RAD51_and_TP53.pdf)
-  - Word : [`docs/Analysis of RAD51 and TP53.docx`](docs/Analysis%20of%20RAD51%20and%20TP53.docx)
 
 - 📓 **Notebook**
   - [`notebooks/Analysis.ipynb`](notebooks/Analysis.ipynb)
