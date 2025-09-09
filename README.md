@@ -3,7 +3,6 @@
 # Analysis of RAD51 & TP53 (WGD)
 
 [![Python](https://img.shields.io/badge/Python-3.x-blue)](#)
-[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange)](#)
 [![Status](https://img.shields.io/badge/Status-Active-brightgreen)](#)
 [![WGD](https://img.shields.io/badge/WGD-Plus%20%7C%20Minus-purple)](#)
 
@@ -16,7 +15,7 @@
 ## 🔗 Liens rapides
 - 📄 **Rapport (PDF)** : [`docs/Analysis_of_RAD51_and_TP53.pdf`](docs/Analysis_of_RAD51_and_TP53.pdf)
 - 📓 **Notebook** : [`notebooks/Analysis.ipynb`](notebooks/Analysis.ipynb)
-- 🧮 **Script(s) Python** : [`src/script.py`](src/script.py) · [`src/stats.py`](src/stats.py)
+- 🧮 **Script(s) Python** : [`src/script.py`](src/script.py) · [`src/stats.py`](statsscript.py)
 - 📊 **Données** : [`data/`](data/) · 🖼️ **Figures** : [`figures/`](figures/)
 
 ---
