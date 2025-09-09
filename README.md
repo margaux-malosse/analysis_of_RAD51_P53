@@ -24,7 +24,7 @@ On produit des visualisations séparées **WGD+** et **WGD−**, ainsi qu’un t
 - *(optionnel / volumineux)* `CCLE_expression.csv` — expression génique (CCLE)
 - *(optionnel / volumineux)* `Achilles_gene_effect.csv` — gene effect CRISPR (DepMap/Achilles)
 
-> Si `CCLE_expression.csv` et `Achilles_gene_effect.csv` sont trop gros, place-les en **Release** ou gérez-les via **Git LFS**.  
+> `CCLE_expression.csv` et `Achilles_gene_effect.csv` sont trop gros, situé en **Release** ou gérez-les via **Git LFS**.  
 > Le pipeline principal fonctionne déjà avec `merged_TP53_RAD51_WGD_norm.csv` + listes WGD.
 
 ---
@@ -63,7 +63,6 @@ On produit des visualisations séparées **WGD+** et **WGD−**, ainsi qu’un t
 
 6. **Exports**  
    - Figures : `figures/rad51_tp53_WGD_minus.png` et `figures/rad51_tp53_WGD_plus.png`  
-     *(si tu gardes les noms actuels : `Figure WGD-.png` et `Figure WGD+.png`)*  
    - Tableau de synthèse (optionnel) : `results/summary_stats.csv` (corrélations, tailles d’échantillon, p-values).
 
 ---
