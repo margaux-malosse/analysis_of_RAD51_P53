@@ -5,7 +5,7 @@ Analyse de l’expression **RAD51** et de l’**effet gène TP53** (CRISPR) selo
 **Liens rapides :**
 - 📓 Notebook : [`notebooks/Analysis.ipynb`](notebooks/Analysis.ipynb)
 - 🧮 Script Python : [`src/script.py`](src/script.py)
-- 📄 Rapport : ['Analysis_of_RAD51_and_TP53.pdf'](docs/Analysis_RAD51_TP53.pdf)
+- 📄 Rapport : ['docs/Analysis_of_RAD51_and_TP53.pdf'](docs/Analysis_RAD51_TP53.pdf)
 - 📊 Données : [`data/`](data/) · 🖼️ Figures : [`figures/`](figures/)
 
 ---
@@ -33,15 +33,9 @@ Question : le statut WGD influence-t-il la relation **RAD51 ↔ TP53** ?
 ---
 
 ## Données
-- [`data/CCLE_expression.csv`](data/CCLE_expression.csv) — expression génique (CCLE)
-- [`data/Achilles_gene_effect.csv`](data/Achilles_gene_effect.csv) — gene effect CRISPR (Achilles/DepMap)
-- [`data/merged_TP53_RAD51_WGD_norm.csv`](data/merged_TP53_RAD51_WGD_norm.csv) — table fusionnée
-- [`data/cell_lines_WGD_oui.csv`](data/cell_lines_WGD_oui.csv) · [`data/cell_lines_WGD_non.csv`](data/cell_lines_WGD_non.csv) — listes WGD+/WGD−
-- [`data/OmicsSignaturesProfile.csv`](data/OmicsSignaturesProfile.csv)
-
----
-
-## Reproduire rapidement
-
-### Optio
-
+## Données
+- [CCLE_expression.csv](data/CCLE_expression.csv) — expression génique (CCLE)
+- [Achilles_gene_effect.csv](data/Achilles_gene_effect.csv) — gene effect CRISPR (Achilles/DepMap)
+- [merged_TP53_RAD51_WGD_norm.csv](data/merged_TP53_RAD51_WGD_norm.csv)
+- [cell_lines_WGD_oui.csv](data/cell_lines_WGD_oui.csv) · [cell_lines_WGD_non.csv](data/cell_lines_WGD_non.csv)
+- [OmicsSignaturesProfile.csv](data/OmicsSignaturesProfile.csv)
