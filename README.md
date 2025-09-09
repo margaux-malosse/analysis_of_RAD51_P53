@@ -3,10 +3,11 @@
 Analyse de l’expression **RAD51** et de l’**effet gène TP53** (CRISPR) selon le statut **WGD**.
 
 **Liens rapides :**
-- 📓 Notebook : [`notebooks/Analysis.ipynb`](notebooks/Analysis.ipynb)
-- 🧮 Script Python : [`src/script.py`](src/script.py)
-- 📄 Rapport Word : [`docs/Analysis of RAD51 and TP53.docx`](docs/Analysis%20of%20RAD51%20and%20TP53.docx)
-- 📊 Données : [`data/`](data/) · 🖼️ Figures : [`figures/`](figures/)
+-  Notebook : [`notebooks/Analysis.ipynb`](notebooks/Analysis.ipynb)
+-  Script Python : [`src/script.py`](src/script.py)
+-  Rapport Word : [`docs/Analysis of RAD51 and TP53.docx`](docs/Analysis%20of%20RAD51%20and%20TP53.docx)
+-  Données : [`data/`](data/) ·
+-  Figures : [`figures/`](figures/)
 
 ---
 
