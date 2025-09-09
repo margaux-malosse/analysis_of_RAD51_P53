@@ -45,7 +45,10 @@ Ce dépôt contient les données, scripts et figures nécessaires pour reproduir
   - [`data/cell_lines_WGD_oui.csv`](data/cell_lines_WGD_oui.csv)
   - [`data/cell_lines_WGD_non.csv`](data/cell_lines_WGD_non.csv)
   - [`data/OmicsSignaturesProfile.csv`](data/OmicsSignaturesProfile.csv)
-  - *(volumineux → Releases/LFS si besoin)* `CCLE_expression.csv`, `Achilles_gene_effect.csv`
+
+## Données (Release)
+- CCLE_expression.csv : [download](sha256:8757db03cd14c6820685c052ead83340e4657e8791c6e47e073797016ebab2d9)
+- Achilles_gene_effect.csv : [download](sha256:2ec8f5a1a35f7b7e0f5baa84b0f68b18848a8be3bda3b7f224fe5479033a987a)
 
 ---
 
