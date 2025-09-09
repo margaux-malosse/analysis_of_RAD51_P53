@@ -1,0 +1,117 @@
+<p><strong>Analysis of RAD51 and TP53</strong></p>
+<p>Introduction</p>
+<p>We separate the cell lines into two groups according to their WGD status (WGD+ and WGD–) in order to study the differential expression of genes of interest. In particular, we focus on P53, a tumor suppressor gene, and RAD51, which is involved in DNA repair. This comparison aims to determine whether the presence of a Whole Genome Duplication influences the expression of these key genes.</p>
+<p>Methode</p>
+<p>!/usr/bin/env python3</p>
+<p>-*- coding: utf-8 -*-</p>
+<p>"""</p>
+<p>Created on Thu Sep 4 10:41:12 2025</p>
+<p>@author: malos</p>
+<p>"""</p>
+<p>Code</p>
+<p>import pandas as pd</p>
+<p>df = pd.read_csv ("/Users/malos/Desktop/hugoinfo/OmicsSignaturesProfile.csv")</p>
+<p>Explanation</p>
+<p>We import the pandas library, which allows us to manipulate and analyze data in tabular form. We then create a DataFrame (data table) by reading the CSV file, which enables us to open, read, and study the dataset.</p>
+<p>Code</p>
+<p>df_wgd_oui = df[df ["WGD"] == 1.0]</p>
+<p>df_wgd_non = df[df ["WGD"] == 0.0]</p>
+<p>Explanation</p>
+<p>Here, we separate the cell lines into two groups according to the value of the <strong>"WGD"</strong> attribute: <strong>df_wgd_oui</strong> contains the lines where <strong>WGD = 1.0</strong> (presence of WGD), and <strong>df_wgd_non</strong> contains the lines where <strong>WGD = 0.0</strong> (absence of WGD).</p>
+<p>Code</p>
+<p>Print ("Lignées WGD = oui :")</p>
+<p>Print (df_wgd_oui)</p>
+<p>Print ("\nLignées WGD = non :")</p>
+<p>Print (df_wgd_non)</p>
+<p>Explanation</p>
+<p>This script successively displays two subsets of the original table: first, the cell lines where the <strong>WGD column = 1.0</strong>, corresponding to lines with a Whole Genome Duplication (WGD), and then the cell lines where <strong>WGD = 0.0</strong>, corresponding to lines without a Whole Genome Duplication. For better readability, a title is displayed before each subset, and a line break separates the two outputs.</p>
+<p>Code</p>
+<p>df_wgd_oui. to_csv ("cell_lines_WGD_oui.csv", index=False)</p>
+<p>df_wgd_non. to_csv ("cell_lines_WGD_non.csv", index=False)</p>
+<p>Explanation</p>
+<p>This script saves the two data subsets into separate CSV files: <strong>cell_lines_WGD_oui.csv</strong> contains the cell lines for which <strong>WGD = 1.0</strong> (presence of a Whole Genome Duplication), and <strong>cell_lines_WGD_non.csv</strong> contains the cell lines for which <strong>WGD = 0.0</strong> (absence of a Whole Genome Duplication). The parameter index=False ensures that the DataFrame row index is not included in the file, so that only the relevant columns are saved.</p>
+<p>Code</p>
+<p><strong>Print ("Fichiers créés :")</strong></p>
+<p><strong>Print (" cell_lines_WGD_oui.csv")</strong></p>
+<p><strong>Print (" cell_lines_WGD_non.csv”)</strong></p>
+<p><strong>Explanation</strong></p>
+<p>This code displays a confirmation message on the screen, indicating that the two CSV files have been generated: <strong>cell_lines_WGD_oui.csv</strong> (containing the lines with WGD) and <strong>cell_lines_WGD_non.csv</strong> (containing the lines without WGD), thereby informing the user that the data export was successful.</p>
+<p>Code</p>
+<p>import pandas as pd</p>
+<p>import matplotlib.pyplot as plt</p>
+<p>Explanation</p>
+<p>Here, this code imports the libraries <strong>pandas</strong> (to manipulate and analyze tabular data) and <strong>matplotlib.pyplot</strong> (to create graphs and visualize the results).</p>
+<p>Code</p>
+<p>df_final = pd.read_csv("/Users/malos/Desktop/hugoinfo/merged_TP53_RAD51_WGD_norm.csv")</p>
+<p>print (df_final.columns.tolist())</p>
+<p>Explanation</p>
+<p>Here, this code reads the CSV file merged_TP53_RAD51_WGD_norm.csv into a DataFrame named <strong>df_final</strong>, and then displays the list of column names in this table to verify the imported data.</p>
+<p><strong>Code</strong></p>
+<p><strong>df_oui = df_final[df_final ["WGD"] == "oui"]</strong></p>
+<p><strong>df_non = df_final[df_final ["WGD"] == "non"]</strong></p>
+<p>Explanation</p>
+<p>Here, this code separates the data into two subsets: <strong>df_oui</strong> contains the cell lines where the WGD column is equal to "oui" (presence of WGD), and <strong>df_non</strong> contains the cell lines where the WGD column is equal to "non" (absence of WGD).</p>
+<p>Code</p>
+<p>plt.figure (figsize=(6, 5))</p>
+<p>plt.scatter(df_oui["p53"], df_oui["RAD51"], alpha=0.6, color="blue")</p>
+<p>plt.xlabel("Expression RAD51")</p>
+<p>plt.ylabel("TP53 gene effect")</p>
+<p>plt.title("RAD51 expression vs TP53 knockout (CRISPR) WGD +")</p>
+<p>plt.grid (True, linestyle="--", alpha=0.5)</p>
+<p>Explanation</p>
+<p>Here, this code creates a scatter plot representing the <strong>WGD+</strong> cell lines: the x-axis corresponds to <strong>RAD51</strong> expression, the y-axis corresponds to the <strong>TP53</strong> gene effect (CRISPR knockout), and each blue point represents a cell line. The plot is formatted with a title, axis labels, and a grid to facilitate readability.</p>
+<p>Code</p>
+<p>plt.figure (figsize=(6, 5))</p>
+<p>plt.scatter(df_non["p53"], df_non["RAD51"], alpha=0.6, color="red")</p>
+<p>plt.xlabel("Expression RAD51")</p>
+<p>plt.ylabel("TP53 gene effect")</p>
+<p>plt.title("RAD51 expression vs TP53 knockout (CRISPR) WGD -")</p>
+<p>plt.grid (True, linestyle="--", alpha=0.5)</p>
+<p>Explanation</p>
+<p>Here, this code creates a scatter plot representing the <strong>WGD–</strong> cell lines: the x-axis corresponds to <strong>RAD51</strong> expression, the y-axis corresponds to the <strong>TP53</strong> gene effect (CRISPR knockout), and each red point represents a cell line. The plot is formatted with a title, axis labels, and a dashed grid to improve readability.</p>
+<p>Result</p>
+<p><img src="media/image1.png" style="width:5.07949in;height:4.55263in" /></p>
+<p><u><strong>Figure 1:</strong> Relationship between RAD51 expression and TP53 knockout (CRISPR) effect in WGD+ cell lines.</u></p>
+<p>This scatter plot shows the relationship between <strong>RAD51</strong> expression (x-axis) and the effect of <strong>TP53</strong> knockout by CRISPR (y-axis) in cell lines presenting a Whole Genome Duplication (WGD+). Each blue point represents a cell line.</p>
+<p><img src="media/image2.png" style="width:5.29167in;height:4.68056in" /></p>
+<p><u><strong>Figure 2:</strong> Relationship between RAD51 expression and TP53 knockout (CRISPR) effect in WGD– cell lines.</u></p>
+<p>This scatter plot shows the relationship between <strong>RAD51</strong> expression (x-axis) and the effect of <strong>TP53</strong> knockout by CRISPR (y-axis) in cell lines without a Whole Genome Duplication (WGD–). Each red point represents a cell line.</p>
+<p>Code python</p>
+<p>#!/usr/bin/env python3</p>
+<p># -*- coding: utf-8 -*-</p>
+<p>"""</p>
+<p>Created on Thu Sep 4 10:41:12 2025</p>
+<p>@author: malos</p>
+<p>"""</p>
+<p>import pandas as pd</p>
+<p>df = pd.read_csv("/Users/malos/Desktop/hugoinfo/OmicsSignaturesProfile.csv")</p>
+<p>df_wgd_oui = df[df["WGD"] == 1.0]</p>
+<p>df_wgd_non = df[df["WGD"] == 0.0]</p>
+<p>print("Lign√©es WGD = oui :")</p>
+<p>print(df_wgd_oui)</p>
+<p>print("\nLign√©es WGD = non :")</p>
+<p>print(df_wgd_non)</p>
+<p>df_wgd_oui.to_csv("cell_lines_WGD_oui.csv", index=False)</p>
+<p>df_wgd_non.to_csv("cell_lines_WGD_non.csv", index=False)</p>
+<p>print("Fichiers cr√©√©s :")</p>
+<p>print(" cell_lines_WGD_oui.csv")</p>
+<p>print(" cell_lines_WGD_non.csv")</p>
+<p>import pandas as pd</p>
+<p>import matplotlib.pyplot as plt</p>
+<p>df_final = pd.read_csv("/Users/malos/Desktop/hugoinfo/merged_TP53_RAD51_WGD_norm.csv")</p>
+<p>print(df_final.columns.tolist())</p>
+<p>df_oui = df_final[df_final["WGD"] == "oui"]</p>
+<p>df_non = df_final[df_final["WGD"] == "non"]</p>
+<p>plt.figure(figsize=(6, 5))</p>
+<p>plt.scatter(df_oui["p53"], df_oui["RAD51"], alpha=0.6, color="blue")</p>
+<p>plt.xlabel("Expression RAD51")</p>
+<p>plt.ylabel("TP53 gene effect")</p>
+<p>plt.title("RAD51 expression vs TP53 knockout (CRISPR) WGD +")</p>
+<p>plt.grid(True, linestyle="--", alpha=0.5)</p>
+<p>plt.figure(figsize=(6, 5))</p>
+<p>plt.scatter(df_non["p53"], df_non["RAD51"], alpha=0.6, color="red")</p>
+<p>plt.xlabel("Expression RAD51")</p>
+<p>plt.ylabel("TP53 gene effect")</p>
+<p>plt.title("RAD51 expression vs TP53 knockout (CRISPR) WGD -")</p>
+<p>plt.grid(True, linestyle="--", alpha=0.5)</p>
+<p>Copier coller dans python</p>
