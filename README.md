@@ -62,6 +62,11 @@
    Export PNG haute résolution dans `figures/`.
 
 </details>
+
+<details>
+<summary>🗂️ Arborescence (cliquer pour déplier)</summary>
+
+```text
 analysis_of_RAD51_P53/
 ├─ data/
 │  ├─ merged_TP53_RAD51_WGD_norm.csv
@@ -79,4 +84,3 @@ analysis_of_RAD51_P53/
 │  ├─ Analysis_of_RAD51_and_TP53.pdf
 │  └─ Analysis of RAD51 and TP53.docx
 └─ README.md
-
