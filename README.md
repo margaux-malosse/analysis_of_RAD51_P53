@@ -63,24 +63,13 @@
 
 </details>
 
-<details>
-<summary>🗂️ Arborescence (cliquer pour déplier)</summary>
-
-```text
-analysis_of_RAD51_P53/
-├─ data/
-│  ├─ merged_TP53_RAD51_WGD_norm.csv
-│  ├─ cell_lines_WGD_oui.csv
-│  ├─ cell_lines_WGD_non.csv
-│  └─ OmicsSignaturesProfile.csv
-├─ figures/
-│  ├─ Figure WGD+.png
-│  └─ Figure WGD-.png
-├─ notebooks/
-│  └─ Analysis.ipynb
-├─ src/
-│  └─ script.py
-├─ docs/
-│  ├─ Analysis_of_RAD51_and_TP53.pdf
-│  └─ Analysis of RAD51 and TP53.docx
-└─ README.md
+- 📁 **data/**
+  - merged_TP53_RAD51_WGD_norm.csv
+  - cell_lines_WGD_oui.csv
+  - cell_lines_WGD_non.csv
+  - OmicsSignaturesProfile.csv
+- 📁 **figures/** → Figure WGD+.png, Figure WGD-.png
+- 📁 **notebooks/** → Analysis.ipynb
+- 📁 **src/** → script.py
+- 📁 **docs/** → Analysis_of_RAD51_and_TP53.pdf, Analysis of RAD51 and TP53.docx
+- 📄 **README.md**
