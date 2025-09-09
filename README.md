@@ -1,73 +1,28 @@
+<div align="center">
+
 # Analysis of RAD51 & TP53 (WGD)
 
-Étude de l’expression **RAD51** et de l’**effet gène TP53** (CRISPR) en fonction du statut **WGD** (Whole-Genome Doubling).
+[![Python](https://img.shields.io/badge/Python-3.x-blue)](#)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange)](#)
+[![Status](https://img.shields.io/badge/Status-Active-brightgreen)](#)
+[![WGD](https://img.shields.io/badge/WGD-Plus%20%7C%20Minus-purple)](#)
 
-**Liens rapides**
--  Rapport (PDF) : [`docs/Analysis_of_RAD51_and_TP53.pdf`](docs/Analysis_of_RAD51_and_TP53.pdf)
--  Notebook : [`notebooks/Analysis.ipynb`](notebooks/Analysis.ipynb)
--  Script Python : [`src/script.py`](src/script.py)
--  Données : [`data/`](data/) ·
--  Figures : [`figures/`](figures/)
+**Étude de l’expression `RAD51` et de l’effet gène `TP53` (CRISPR) selon le statut WGD.**
 
----
-
-## Contexte & objectif
-L’objectif est de caractériser la relation entre **RAD51 (expression)** et **TP53 (gene effect CRISPR)** et de tester si cette relation **diffère selon le statut WGD** des lignées cellulaires.  
-On produit des visualisations séparées **WGD+** et **WGD−**, ainsi qu’un test statistique avec **interaction** (voir Méthode).
+</div>
 
 ---
 
-## Données utilisées (dans `data/`)
-- `merged_TP53_RAD51_WGD_norm.csv` — table de travail intégrant RAD51/TP53 et métadonnées
-- `cell_lines_WGD_oui.csv` · `cell_lines_WGD_non.csv` — listes des lignées WGD+ / WGD−
-- `OmicsSignaturesProfile.csv` — signatures (utilisées dans certaines analyses)
-- *(optionnel / volumineux)* `CCLE_expression.csv` — expression génique (CCLE)
-- *(optionnel / volumineux)* `Achilles_gene_effect.csv` — gene effect CRISPR (DepMap/Achilles)
-
-> `CCLE_expression.csv` et `Achilles_gene_effect.csv` sont trop gros, situé en **Release** ou gérez-les via **Git LFS**.  
-> Le pipeline principal fonctionne déjà avec `merged_TP53_RAD51_WGD_norm.csv` + listes WGD.
+## 🔗 Liens rapides
+-  **Rapport (PDF)** : [`docs/Analysis_of_RAD51_and_TP53.pdf`](docs/Analysis_of_RAD51_and_TP53.pdf)
+-  **Notebook** : [`notebooks/Analysis.ipynb`](notebooks/Analysis.ipynb)
+-  **Script Python** : [`src/script.py`](src/script.py)
+-  **Données** : [`data/`](data/) &nbsp;·&nbsp;
+-  **Figures** : [`figures/`](figures/)
 
 ---
 
-## Méthode (détaillée)
-
-1. **Harmonisation des identifiants**  
-   - Colonnes d’identifiants attendues : `DepMap_ID` (prioritaire) ou `stripped_cell_line_name`.  
-   - Normalisation des noms : minuscules, suppression des espaces/ponctuation pour la jointure si besoin.
-
-2. **Attribution du statut WGD**  
-   - Construction d’une variable binaire `WGD` à partir de `cell_lines_WGD_oui.csv` (→ `WGD=1`) et `cell_lines_WGD_non.csv` (→ `WGD=0`).  
-   - Jointure sur l’identifiant choisi (idéalement `DepMap_ID`).
-
-3. **Table d’analyse**  
-   - Variables minimales :  
-     - `RAD51_expr` (valeur normalisée telle que fournie dans les données)  
-     - `TP53_effect` (gene effect CRISPR)  
-     - `WGD` (0/1)  
-   - Filtre : suppression des lignes sans valeur pour l’une des trois variables.
-
-4. **Statistiques & tests**  
-   - **Descriptif** : moyenne, écart-type, n par groupe WGD.  
-   - **Corrélations** : Pearson et Spearman **dans chaque groupe** (WGD+ et WGD−).  
-   - **Régression avec interaction** :  
-     - Modèle : `TP53_effect ~ RAD51_expr * WGD`  
-     - Interprétation : le terme d’interaction teste si la pente (lien RAD51→TP53) **diffère** entre WGD+ et WGD−.  
-     - Robustesse : en cas d’outliers, estimation robuste (Huber) en plus du modèle OLS.
-
-5. **Visualisations**  
-   - Deux nuages de points :  
-     - `RAD51_expr` (x) vs `TP53_effect` (y) **WGD−**  
-     - `RAD51_expr` (x) vs `TP53_effect` (y) **WGD+**  
-   - Ajout d’une ligne de tendance (régression simple par groupe).  
-   - Export PNG haute résolution dans `figures/`.
-
-6. **Exports**  
-   - Figures : `figures/rad51_tp53_WGD_minus.png` et `figures/rad51_tp53_WGD_plus.png`  
-   - Tableau de synthèse (optionnel) : `results/summary_stats.csv` (corrélations, tailles d’échantillon, p-values).
-
----
-
-## Résultats (aperçu)
+## 🖼️ Aperçu visuel
 
 **WGD−**  
 ![RAD51 vs TP53 — WGD−](figures/Figure%20WGD-.png)
@@ -75,4 +30,53 @@ On produit des visualisations séparées **WGD+** et **WGD−**, ainsi qu’un t
 **WGD+**  
 ![RAD51 vs TP53 — WGD+](figures/Figure%20WGD%2B.png)
 
-> Les interprétations détaillées sont dans le **PDF** : [`docs/Analysis_of_RAD51_and_TP53.pdf`](docs/Analysis_of_RAD51_and_TP53.pdf).
+> 🔎 Les détails d’interprétation sont dans le PDF : [`docs/Analysis_of_RAD51_and_TP53.pdf`](docs/Analysis_of_RAD51_and_TP53.pdf)
+
+---
+
+## 📂 Données (chemins)
+- [`data/merged_TP53_RAD51_WGD_norm.csv`](data/merged_TP53_RAD51_WGD_norm.csv)
+- [`data/cell_lines_WGD_oui.csv`](data/cell_lines_WGD_oui.csv) · [`data/cell_lines_WGD_non.csv`](data/cell_lines_WGD_non.csv)
+- [`data/OmicsSignaturesProfile.csv`](data/OmicsSignaturesProfile.csv)
+-  `CCLE_expression.csv`, `Achilles_gene_effect.csv` → en **Releases** ou via **Git LFS**.
+
+---
+
+<details>
+<summary><strong>🧪 Méthode (clique pour dérouler)</strong></summary>
+
+**Objectif.** Tester si la relation entre l’expression **RAD51** et l’**effet gène TP53** diffère selon le statut **WGD**.
+
+**Pipeline.**
+1. **Statut WGD.** Construction de `WGD` (0/1) à partir des listes `cell_lines_WGD_oui.csv` (→1) et `cell_lines_WGD_non.csv` (→0) via un identifiant commun (idéalement `DepMap_ID`).
+2. **Table d’analyse.** À partir de `merged_TP53_RAD51_WGD_norm.csv`, conserver au minimum :
+   - `RAD51_expr` (expression normalisée),
+   - `TP53_effect` (gene effect CRISPR),
+   - `WGD` (0/1).
+   Retirer les lignes incomplètes.
+3. **Stats.**
+   - Descriptif par groupe : `n`, moyenne, écart-type.
+   - Corrélations **par groupe** (WGD−, WGD+).
+   - Modèle avec interaction : `TP53_effect ~ RAD51_expr * WGD` (teste la différence de pente entre groupes).
+4. **Plots.** Scatter RAD51 (x) vs TP53 (y) pour **WGD−** et **WGD+**, + régression par groupe.  
+   Export PNG haute résolution dans `figures/`.
+
+</details>
+analysis_of_RAD51_P53/
+├─ data/
+│  ├─ merged_TP53_RAD51_WGD_norm.csv
+│  ├─ cell_lines_WGD_oui.csv
+│  ├─ cell_lines_WGD_non.csv
+│  └─ OmicsSignaturesProfile.csv
+├─ figures/
+│  ├─ Figure WGD+.png
+│  └─ Figure WGD-.png
+├─ notebooks/
+│  └─ Analysis.ipynb
+├─ src/
+│  └─ script.py
+├─ docs/
+│  ├─ Analysis_of_RAD51_and_TP53.pdf
+│  └─ Analysis of RAD51 and TP53.docx
+└─ README.md
+
