@@ -29,12 +29,3 @@ Analyse de l’expression **RAD51** et de l’**effet gène TP53** (CRISPR) selo
 - [`data/cell_lines_WGD_oui.csv`](data/cell_lines_WGD_oui.csv) · [`data/cell_lines_WGD_non.csv`](data/cell_lines_WGD_non.csv) — listes WGD+/WGD-
 - [`data/OmicsSignaturesProfile.csv`](data/OmicsSignaturesProfile.csv)
 
----
-
-## Reproduire rapidement
-
-### Option 1 — Notebook
-```bash
-git clone https://github.com/margaux-malosse/analysis_of_RAD51_P53.git
-cd analysis_of_RAD51_P53
-# Ouvrir notebooks/Analysis.ipynb dans Jupyter
