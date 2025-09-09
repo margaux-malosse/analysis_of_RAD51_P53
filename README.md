@@ -1,3 +1,56 @@
+<div align="center">
+
+# Analysis of RAD51 & TP53 (WGD)
+
+[![Python](https://img.shields.io/badge/Python-3.x-blue)](#)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange)](#)
+[![Status](https://img.shields.io/badge/Status-Active-brightgreen)](#)
+
+**Étude de l’expression `RAD51` et de l’effet gène `TP53` (CRISPR) selon le statut WGD.**
+
+</div>
+
+---
+
+## 🖼️ Figures (aperçu)
+
+**Scatter RAD51 ↔ TP53 (WGD− / WGD+)**
+<br>
+<img src="figures/rad51_vs_tp53_WGD_minus.png" width="48%"> <img src="figures/rad51_vs_tp53_WGD_plus.png" width="48%">
+
+**Boxplots par groupe WGD**
+<br>
+<img src="figures/rad51_by_WGD_box.png" width="48%"> <img src="figures/tp53_by_WGD_box.png" width="48%">
+
+**Figures initiales**
+<br>
+<img src="figures/Figure%20WGD-.png" width="48%"> <img src="figures/Figure%20WGD%2B.png" width="48%">
+
+---
+
+## 🔗 Liens directs
+
+- 📄 **Rapports**
+  - PDF : [`docs/Analysis_of_RAD51_and_TP53.pdf`](docs/Analysis_of_RAD51_and_TP53.pdf)
+  - Word : [`docs/Analysis of RAD51 and TP53.docx`](docs/Analysis%20of%20RAD51%20and%20TP53.docx)
+
+- 📓 **Notebook**
+  - [`notebooks/Analysis.ipynb`](notebooks/Analysis.ipynb)
+
+- 🧮 **Scripts**
+  - Analyse statistiques : [`src/stats.py`](src/stats.py)
+  - Figures : [`src/plots.py`](src/plots.py)
+  - Pipeline/Autres : [`src/script.py`](src/script.py)
+
+- 📊 **Données**
+  - [`data/merged_TP53_RAD51_WGD_norm.csv`](data/merged_TP53_RAD51_WGD_norm.csv)
+  - [`data/cell_lines_WGD_oui.csv`](data/cell_lines_WGD_oui.csv)
+  - [`data/cell_lines_WGD_non.csv`](data/cell_lines_WGD_non.csv)
+  - [`data/OmicsSignaturesProfile.csv`](data/OmicsSignaturesProfile.csv)
+  - *(volumineux → Releases/LFS si besoin)* `CCLE_expression.csv`, `Achilles_gene_effect.csv`
+
+---
+
 ## 🧮 Scripts
 - Analyse statistiques : [`src/stats.py`](src/stats.py)
 - Figures : [`src/plots.py`](src/plots.py)
@@ -33,6 +86,7 @@
 </details>
 
 ---
+
 ## 🗂️ Arborescence
 
 - 📁 **data/**
@@ -57,4 +111,3 @@ python3 -m venv .venv && source .venv/bin/activate
 pip install pandas numpy scipy statsmodels matplotlib
 python src/stats.py   # -> results/
 python src/plots.py   # -> figures/
-
