@@ -36,8 +36,8 @@ Ce dépôt contient les données, scripts et figures nécessaires pour reproduir
   - [`notebooks/Analysis.ipynb`](notebooks/Analysis.ipynb)
 
 - 🧮 **Scripts**
-  - Analyse statistiques : [`src/stats.py`](src/stats.py)
-  - Figures (génération des graphes) : [`src/plots.py`](src/plots.py)
+  - Analyse statistiques : [`src/stats.py`](src/statsscript.py)
+  - Figures (génération des graphes) : [`src/plots.py`](src/figuresstats.py)
   - Pipeline/Autres : [`src/script.py`](src/script.py)
 
 - 📊 **Données**
@@ -50,8 +50,8 @@ Ce dépôt contient les données, scripts et figures nécessaires pour reproduir
 ---
 
 ## 🧮 Scripts
-- Analyse statistiques : [`src/stats.py`](src/stats.py)
-- Figures : [`src/plots.py`](src/plots.py)
+- Analyse statistiques : [`src/stats.py`](src/statsscript.py)
+- Figures : [`src/plots.py`](src/figuresstats.py)
 
 <details>
 <summary><strong>🧪 Méthode (cliquer pour déplier)</strong></summary>
@@ -90,10 +90,10 @@ Ce dépôt contient les données, scripts et figures nécessaires pour reproduir
 <details>
 <summary><strong>✅ Résultats (cliquer pour déplier)</strong></summary>
 
-- Descriptif par groupe : [`results/summary_stats.csv`](results/summary_stats.csv)  
-- Corrélations (Pearson / Spearman) : [`results/correlations.csv`](results/correlations.csv)  
-- Pentes estimées par groupe (slopes) : [`results/simple_slopes.csv`](results/simple_slopes.csv)  
-- Rapport de régression (texte) : [`results/model_summary.txt`](results/model_summary.txt)
+- Descriptif par groupe : [`results/summary_stats.csv`](data/summary_stats.csv)  
+- Corrélations (Pearson / Spearman) : [`results/correlations.csv`](data/correlations.csv)  
+- Pentes estimées par groupe (slopes) : [`results/simple_slopes.csv`](data/simple_slopes.csv)  
+- Rapport de régression (texte) : [`results/model_summary.txt`](data/model_summary.txt)
 
 </details>
 
