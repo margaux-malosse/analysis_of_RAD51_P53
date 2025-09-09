@@ -15,8 +15,14 @@ Ce dépôt contient les données, scripts et figures nécessaires pour reproduir
 
 ## 🖼️ Figures initiales 
 
-<br>
-<img src="figures/Figure%20WGD-.png" width="48%"> <img src="figures/Figure%20WGD%2B.png" width="48%">
+<div align="center">
+  <img src="figures/Figure%20WGD-.png" width="72%" alt="RAD51 vs TP53 — WGD−">
+</div>
+
+<div align="center">
+  <img src="figures/Figure%20WGD%2B.png" width="72%" alt="RAD51 vs TP53 — WGD+">
+</div>
+
 
 ---
 
