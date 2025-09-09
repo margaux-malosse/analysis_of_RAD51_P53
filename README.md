@@ -50,29 +50,28 @@
 <br>
 <img src="figures/rad51_by_WGD_box.png" width="48%"> <img src="figures/tp53_by_WGD_box.png" width="48%">
 
-**Figures initiales**  
-<br>
-<img src="figures/Figure%20WGD-.png" width="48%"> <img src="figures/Figure%20WGD%2B.png" width="48%">
+--- 
+<summary><strong>🧪 Méthode (clique pour dérouler)</strong></summary>
+
+**Objectif.** Tester si la relation entre l’expression **RAD51** et l’**effet gène TP53** diffère selon le statut **WGD**.
+
+**Pipeline.**
+1. **Statut WGD.** Construction de `WGD` (0/1) à partir des listes `cell_lines_WGD_oui.csv` (→1) et `cell_lines_WGD_non.csv` (→0) via un identifiant commun (idéalement `DepMap_ID`).
+2. **Table d’analyse.** À partir de `merged_TP53_RAD51_WGD_norm.csv`, conserver :
+   - `RAD51_expr` (expression normalisée),
+   - `TP53_effect` (gene effect CRISPR),
+   - `WGD` (0/1).  
+   Retirer les lignes incomplètes.
+3. **Stats.**
+   - Descriptif par groupe : `n`, moyenne, écart-type.
+   - Corrélations **par groupe** (WGD−, WGD+).
+   - Modèle avec interaction : `TP53_effect ~ RAD51_expr * WGD` (teste la différence de pente entre groupes).
+4. **Plots.** Scatter RAD51 (x) vs TP53 (y) pour **WGD−** et **WGD+** + régression par groupe.  
+   Export PNG haute résolution dans `figures/`.
+
+</details>
 
 ---
-
-## 🧪 Méthode (résumé)
-
-- Construction du statut **WGD** (0/1) à partir des listes WGD+/WGD−.  
-- Table minimale : `RAD51_expr` (depuis `RAD51`), `TP53_effect` (depuis `p53`), `WGD`.  
-- **Stats** : descriptif par groupe, corrélations par groupe, régression `TP53_effect ~ RAD51_expr * WGD`.  
-- **Figures** : scatters (régression par groupe) + boxplots.  
-- Sorties écrites dans `results/` et `figures/`.
-
----
-
-## ▶️ Reproduire localement
-```bash
-python3 -m venv .venv && source .venv/bin/activate
-pip install pandas numpy scipy statsmodels matplotlib
-python src/stats.py   # -> results/
-python src/plots.py   # -> figures/
-
 ## 🗂️ Arborescence
 
 - 📁 **data/**
@@ -89,4 +88,12 @@ python src/plots.py   # -> figures/
 - 📁 **docs/** → Analysis_of_RAD51_and_TP53.pdf, Analysis of RAD51 and TP53.docx
 - 📄 **README.md**
 
+---
+
+## ▶️ Reproduire localement
+```bash
+python3 -m venv .venv && source .venv/bin/activate
+pip install pandas numpy scipy statsmodels matplotlib
+python src/stats.py   # -> results/
+python src/plots.py   # -> figures/
 
