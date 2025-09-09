@@ -6,23 +6,15 @@
 [![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange)](#)
 [![Status](https://img.shields.io/badge/Status-Active-brightgreen)](#)
 
-**Étude de l’expression `RAD51` et de l’effet gène `TP53` (CRISPR) selon le statut WGD.**
+**Étude de la relation entre `RAD51` (expression) et `TP53` (gene effect CRISPR) selon le statut de duplication du génome entier (WGD).**  
+Ce dépôt contient les données, scripts et figures nécessaires pour reproduire l’analyse, ainsi qu’un rapport synthétique (PDF).
 
 </div>
 
 ---
 
-## 🖼️ Figures (aperçu)
+## 🖼️ Figures initiales 
 
-**Scatter RAD51 ↔ TP53 (WGD− / WGD+)**
-<br>
-<img src="figures/rad51_vs_tp53_WGD_minus.png" width="48%"> <img src="figures/rad51_vs_tp53_WGD_plus.png" width="48%">
-
-**Boxplots par groupe WGD**
-<br>
-<img src="figures/rad51_by_WGD_box.png" width="48%"> <img src="figures/tp53_by_WGD_box.png" width="48%">
-
-**Figures initiales**
 <br>
 <img src="figures/Figure%20WGD-.png" width="48%"> <img src="figures/Figure%20WGD%2B.png" width="48%">
 
@@ -39,7 +31,7 @@
 
 - 🧮 **Scripts**
   - Analyse statistiques : [`src/stats.py`](src/stats.py)
-  - Figures : [`src/plots.py`](src/plots.py)
+  - Figures (génération des graphes) : [`src/plots.py`](src/plots.py)
   - Pipeline/Autres : [`src/script.py`](src/script.py)
 
 - 📊 **Données**
@@ -54,16 +46,6 @@
 ## 🧮 Scripts
 - Analyse statistiques : [`src/stats.py`](src/stats.py)
 - Figures : [`src/plots.py`](src/plots.py)
-
-<details>
-<summary><strong>✅ Résultats (cliquer pour déplier)</strong></summary>
-
-- Descriptif par groupe : [`results/summary_stats.csv`](results/summary_stats.csv)  
-- Corrélations (Pearson / Spearman) : [`results/correlations.csv`](results/correlations.csv)  
-- Pentes estimées par groupe (slopes) : [`results/simple_slopes.csv`](results/simple_slopes.csv)  
-- Rapport de régression (texte) : [`results/model_summary.txt`](results/model_summary.txt)
-
-</details>
 
 <details>
 <summary><strong>🧪 Méthode (cliquer pour déplier)</strong></summary>
@@ -82,6 +64,30 @@
    - Corrélations **par groupe** (WGD−, WGD+).
    - Modèle avec interaction : `TP53_effect ~ RAD51_expr * WGD` (teste la différence de pente entre groupes).
 4. **Visualisations.** Scatters par groupe avec droite de régression + boxplots; PNG enregistrés dans `figures/`.
+
+</details>
+
+---
+
+## 🖼️ Figures issues de l’analyse statistique
+
+**Scatter RAD51 ↔ TP53 (WGD− / WGD+)**  
+<br>
+<img src="figures/rad51_vs_tp53_WGD_minus.png" width="48%"> <img src="figures/rad51_vs_tp53_WGD_plus.png" width="48%">
+
+**Boxplots par groupe WGD**  
+<br>
+<img src="figures/rad51_by_WGD_box.png" width="48%"> <img src="figures/tp53_by_WGD_box.png" width="48%">
+
+---
+
+<details>
+<summary><strong>✅ Résultats (cliquer pour déplier)</strong></summary>
+
+- Descriptif par groupe : [`results/summary_stats.csv`](results/summary_stats.csv)  
+- Corrélations (Pearson / Spearman) : [`results/correlations.csv`](results/correlations.csv)  
+- Pentes estimées par groupe (slopes) : [`results/simple_slopes.csv`](results/simple_slopes.csv)  
+- Rapport de régression (texte) : [`results/model_summary.txt`](results/model_summary.txt)
 
 </details>
 
